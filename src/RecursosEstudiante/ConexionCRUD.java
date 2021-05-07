@@ -1,19 +1,17 @@
-package RecursoEstudiante;
+package RecursosEstudiante;
 
 import java.sql.*;
 
 public class ConexionCRUD {
-    private final String servidor = "jdbc:mysql://127.0.0.1:3306/  AQUI VA EL NOMBRE DE LA BASE DE DATOS";
+    private final String servidor = "jdbc:mysql://127.0.0.1:3306/AQUI VA EL NOMBRE DE LA BD";
     private final String usuario = "root";
     private final String clave = "";
-    //libreria de mysql
     private final String driverConector = "com.mysql.jdbc.Driver";
     private static Connection conexion;
     
     public ConexionCRUD(){
         try{
-            Class.forName(driverConector); //levantar el driver
-            //establecer conexion
+            Class.forName(driverConector); 
             conexion= DriverManager.getConnection(servidor, usuario, clave);
         }catch(ClassNotFoundException | SQLException e){
             System.out.println("Conecion fallida! : " + e.getMessage());
@@ -39,7 +37,6 @@ public class ConexionCRUD {
             System.out.println(e.getMessage());
         }
     }
-        
     //metodo eliminar y actualizar
     public void actualizarEliminarRegistro(String tabla, String valoresCamposNuevos, String condicion){
         //cargar la conexion
@@ -48,7 +45,6 @@ public class ConexionCRUD {
         try{
             Statement stmt;
             String sqlQueryStmt;
-            //verificar que vaorescamposnuevos venga vacia y asi seleccionar si es borrar o actualizar registro
             if(valoresCamposNuevos.isEmpty()){
                 sqlQueryStmt = "DELETE FROM " + tabla + " WHERE " + condicion + ";";
             }else{
@@ -77,7 +73,7 @@ public class ConexionCRUD {
                 sqlQueryStmt = "SELECT " + camposBuscar + " FROM " + tablaBuscar + " WHERE " + condicionBuscar; 
             }
             stmt = cone.createStatement();
-            stmt.executeQuery(sqlQueryStmt);
+            stmt.executeQuery(sqlQueryStmt); 
             try(ResultSet miResultSet = stmt.executeQuery(sqlQueryStmt)){
                 if(miResultSet.next()){ 
                     ResultSetMetaData metaData =  miResultSet.getMetaData();
