@@ -1,5 +1,4 @@
 package RecursosEstudiante;
-
 public class Estudiante {
     private int idEstudiante;
     private String carnetEstudiante;
