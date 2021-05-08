@@ -14,7 +14,7 @@ public class Update {
         est.setIdEstudiante(leer.nextInt());
         //ingreso de datos a actualizar 
         String tablaBuscar = "tb_estudiante";
-        String camposBuscar = "id_estudiante,carnet_estudiante, nom_estudiante, ape_estudiante, edad_estudiante";
+        String camposBuscar = "id_estudiante,carnet_estudiante, nom_estudiante, ape_estudiante, edada_estudiante";
         String condicion = "id_estudiante = " + est.getIdEstudiante();
         utilerias.desplegarRegistros(tablaBuscar, camposBuscar, condicion);
         
@@ -29,7 +29,7 @@ public class Update {
         
         String tabla ="tb_estudiante";
         String camposValoresNuevos = "carnet_estudiante = '" + est.getCarnetEstudiante() + "', nom_estudiante = '" + est.getNomEstudiante() + 
-                                     "', ape_estudiante = '" + est.getApeEstudiante() + "', edad_estudiante = '"+ est.getEdadEstudiante() + "'";
+                                     "', ape_estudiante = '" + est.getApeEstudiante() + "', edada_estudiante = '"+ est.getEdadEstudiante() + "'";
         
         utilerias.actualizarEliminarRegistro(tabla, camposValoresNuevos, condicion);
         System.out.println("Modificado correctamente");

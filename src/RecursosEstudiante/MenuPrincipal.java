@@ -1,4 +1,3 @@
-
 package RecursosEstudiante;
 
 import java.sql.SQLException;
@@ -26,10 +25,9 @@ public class MenuPrincipal
         System.out.println("********************************************");
         System.out.print("Seleccionar Opcion: ");
         opcionMenu = opcionSeleccionada.next();
-        //aue 
         switch (opcionMenu){
             case "1":
-                // Crear Resgistro
+                    //Create create = new Create();
                 break;
             case "2":
                     Read read = new Read();
@@ -38,7 +36,7 @@ public class MenuPrincipal
                     Update update = new Update();
                 break;
             case "4":
-                // Delete delete = new Delete();
+                    Delete delete = new Delete();
                 break;
             case "5":
                 System.exit(0);

@@ -3,7 +3,7 @@ package RecursosEstudiante;
 import java.sql.*;
 
 public class ConexionCRUD {
-    private final String servidor = "jdbc:mysql://127.0.0.1:3306/AQUI VA EL NOMBRE DE LA BD";
+    private final String servidor = "jdbc:mysql://127.0.0.1:3306/db_estudiante";
     private final String usuario = "root";
     private final String clave = "";
     private final String driverConector = "com.mysql.jdbc.Driver";
