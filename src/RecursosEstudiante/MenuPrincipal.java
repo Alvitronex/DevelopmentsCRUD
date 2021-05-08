@@ -7,8 +7,6 @@ import java.util.Scanner;
 public class MenuPrincipal 
 
 {
-
-
     public static void main(String[] args) throws SQLException {
      desplegarMenu();
     }
@@ -34,13 +32,13 @@ public class MenuPrincipal
                 // Crear Resgistro
                 break;
             case "2":
-                //Leer = Nuevo Leer
+                    Read read = new Read();
                 break;
             case"3":
-                //Actualizar= Actualizar Nuevo
+                    Update update = new Update();
                 break;
             case "4":
-                // Eliminar = Eliminar Nuevo
+                // Delete delete = new Delete();
                 break;
             case "5":
                 System.exit(0);
