@@ -11,7 +11,6 @@ carnet_estudiante varchar(6) - Ejemplo MP1234
 nom_estudiante varchar(30)
 ape_estudiante varchar(30)
 edad_estudiante Int(3)
-
 */
 package RecursosEstudiante;
 

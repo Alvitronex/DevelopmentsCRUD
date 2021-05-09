@@ -19,13 +19,13 @@ public class Create {
         est.setEdadEstudiante(leer.nextInt());
         
         String tabla = "tb_estudiante";
-        String camposTabla = "carnet_estudiante, nom_estudiante, ape_estudiante, edada_estudiante";
+        String camposTabla = "carnet_estudiante, nom_estudiante, ape_estudiante, edad_estudiante";
         String valoresCampos = "'" + est.getCarnetEstudiante()+ "','" + est.getNomEstudiante()+ "','" + est.getApeEstudiante()+ "','" + est.getEdadEstudiante() + "'" ;
         
         //instancia de la conexion CRUD
         ConexionCRUD utilirias  = new ConexionCRUD();
         //SE ENVIAN LOS PARAMETROS NECESARIOS PARA GUARDAR EL REGISTRO AL METODO GUARDAR REGISTRO
-        ConexionCRUD.guardarRegistros(tabla, camposTabla, valoresCampos);
+        utilirias.guardarRegistros(tabla, camposTabla, valoresCampos);
          MenuPrincipal.desplegarMenu();
         
     }

@@ -14,7 +14,9 @@ edad_estudiante Int(3)
 
 */
 package RecursosEstudiante;
+
 public class Estudiante {
+    
     private int idEstudiante;
     private String carnetEstudiante;
     private String nomEstudiante;
