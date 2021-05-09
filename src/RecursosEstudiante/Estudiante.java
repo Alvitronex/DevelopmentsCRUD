@@ -17,11 +17,13 @@ package RecursosEstudiante;
 
 public class Estudiante {
     
-    private int idEstudiante;
-    private String carnetEstudiante;
+     private int idEstudiante;
     private String nomEstudiante;
     private String apeEstudiante;
+    private String carnetEstudiante;
     private int edadEstudiante;
+
+   
 
     public int getIdEstudiante() {
         return idEstudiante;
@@ -29,14 +31,6 @@ public class Estudiante {
 
     public void setIdEstudiante(int idEstudiante) {
         this.idEstudiante = idEstudiante;
-    }
-
-    public String getCarnetEstudiante() {
-        return carnetEstudiante;
-    }
-
-    public void setCarnetEstudiante(String carnetEstudiante) {
-        this.carnetEstudiante = carnetEstudiante;
     }
 
     public String getNomEstudiante() {
@@ -55,13 +49,19 @@ public class Estudiante {
         this.apeEstudiante = apeEstudiante;
     }
 
-    public int getEdadEstudiante() {
+    public String getCarnetEstudiante() {
+        return carnetEstudiante;
+    }
+
+    public void setCarnetEstudiante(String carnetEstudiante) {
+        this.carnetEstudiante = carnetEstudiante;
+    }
+     public int getEdadEstudiante() {
         return edadEstudiante;
     }
 
     public void setEdadEstudiante(int edadEstudiante) {
         this.edadEstudiante = edadEstudiante;
     }
-
-
+    
 }

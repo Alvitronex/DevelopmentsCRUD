@@ -20,39 +20,39 @@ import java.util.Scanner;
 
 public class Update {
     
-    Update() throws SQLException{
-        Scanner leer = new Scanner(System.in);
-        Estudiante est = new Estudiante();
-        ConexionCRUD utilirias = new ConexionCRUD();
-        System.out.println("\n<< ACTUALIZAR REGISTROS >>");
-        
-        System.out.println("Ingresar id del a modificar: ");
-        est.setIdEstudiante(leer.nextInt());
-        
-        //ingreso de datos a actualizar 
+    Update() throws SQLException {
+        Scanner sc = new Scanner(System.in);
+        Estudiante person = new Estudiante();
+        ConexionCRUD utilerias = new ConexionCRUD();
+        System.out.println("<< ACTUALIZA REGISTROS >>");
+
+        System.out.println("Ingresar id del registro a modificar: ");
+        person.setIdEstudiante(sc.nextInt());
+
         String tablaBuscar = "tb_estudiante";
-        String camposBuscar = "id_estudiante, carnet_estudiante, nom_estudiante, ape_estudiante, edad_estudiante";
-        String condicion = "id_estudiante = " + est.getIdEstudiante();
-        utilirias.desplegarRegistros(tablaBuscar, camposBuscar, condicion);
-        
-        System.out.println("Carnet: ");
-        est.setCarnetEstudiante(leer.next());
-        
+        String camposBuscar = "id_estudiante, nom_estudiante, ape_estudiante, carnet_estudiante, edad_estudiante";
+        String condicionBuscar = "id_estudiante = " + person.getIdEstudiante();
+        utilerias.desplegarRegistros(tablaBuscar, camposBuscar, condicionBuscar);
+
         System.out.println("Nombre: ");
-        est.setNomEstudiante(leer.next());
-        
-        System.out.println("Apellido: ");
-        est.setApeEstudiante(leer.next());
+        person.setNomEstudiante(sc.next());
+
+        System.out.println("Apellidos: ");
+        person.setApeEstudiante(sc.next());
+
+        System.out.println("Carnet: ");
+        person.setCarnetEstudiante(sc.next());
         
         System.out.println("Edad: ");
-        est.setEdadEstudiante(leer.nextInt());
-        
-        String tabla ="tb_estudiante";
-        String camposValoresNuevos = "carnet_estudiante = '" + est.getCarnetEstudiante() + "', nom_estudiante = '" + est.getNomEstudiante() + 
-                                     "', ape_estudiante = '" + est.getApeEstudiante() + "', edad_estudiante = '"+ est.getEdadEstudiante() + "'";
-        
-        utilirias.actualizarEliminarRegistro(tabla, camposValoresNuevos, condicion);
-        System.out.println("Modificado correctamente");
+        person.setEdadEstudiante(sc.nextInt());
+
+        String tabla = "tb_estudiante";
+        String camposValoresNuevos = "nom_estudiante = '" + person.getNomEstudiante() + "', ape_estudiante = '" + person.getApeEstudiante() + "', carnet_estudiante = '" + person.getCarnetEstudiante() + "', edad_estudiante = " + person.getEdadEstudiante();
+
+        utilerias.actualizarEliminarRegistro(tabla, camposValoresNuevos, condicionBuscar);
+        System.out.println("Modificado correctamente!");
+
         MenuPrincipal.desplegarMenu();
+
     }
 }

@@ -18,23 +18,23 @@ package RecursosEstudiante;
 import java.sql.*;
 
 public class Read {
-    public Read()throws SQLException{
-        System.out.println("\n<< CONSULTA DE REGISTRO >>");
+     public Read() throws SQLException {
+        System.out.println("<< CONSULTA DE REGISTROS >>");
         mostrarResultados();
     }
-    private void mostrarResultados()throws SQLException{
+
+    private void mostrarResultados() throws SQLException {
         try{
-            ConexionCRUD utilirias = new ConexionCRUD();
+            ConexionCRUD utilerias = new ConexionCRUD();
             String tabla = "tb_estudiante";
             String camposTabla = "*";
             
-            String condicionBusqueda="";
+            String condicionBusqueda = "";
             
-            //metodo que realiza la busqueda
-            utilirias.desplegarRegistros(tabla, camposTabla, condicionBusqueda);
-        }catch(SQLException ex){
-            System.out.println("Ha ocurrido un eror: " + ex.getMessage());
-        } finally{
+            utilerias.desplegarRegistros(tabla, camposTabla, condicionBusqueda);
+        } catch (SQLException e) {
+            System.out.println("Ha ocurrido el siguiente error: " + e.getMessage());
+        } finally {
             MenuPrincipal.desplegarMenu();
         }
     }
