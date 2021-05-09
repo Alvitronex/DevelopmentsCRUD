@@ -16,6 +16,8 @@ edad_estudiante Int(3)
 package RecursosEstudiante;
 
 import java.sql.*;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 
 public class ConexionCRUD {
     private final String servidor = "jdbc:mysql://127.0.0.1:3306/db_estudiante";
@@ -41,7 +43,7 @@ public class ConexionCRUD {
         ConexionCRUD conectar = new ConexionCRUD();
         Connection cone = conectar.getConnection();
         try{
-            String sqlQueryStmt = "INSERT INTO " + tabla  + "(" + campoTabla + ") VALUES (" + valoresCampos + ");";
+            String sqlQueryStmt = "INSERT INTO " + tabla  + " (" + campoTabla + ") VALUES (" + valoresCampos + "); ";
             Statement stmt;
             stmt = cone.createStatement();
             stmt.executeUpdate(sqlQueryStmt);
@@ -60,6 +62,7 @@ public class ConexionCRUD {
         try{
             Statement stmt;
             String sqlQueryStmt;
+            
             if(valoresCamposNuevos.isEmpty()){
                 sqlQueryStmt = "DELETE FROM " + tabla + " WHERE " + condicion + ";";
             }else{
@@ -99,8 +102,9 @@ public class ConexionCRUD {
                         System.out.printf("%-20s\t" , metaData.getColumnName(i));
                     }
                     System.out.println();
+                    
                     do{
-                        for(int i=1; i<=numColumnas; i++){
+                        for(int i=1; i <=numColumnas; i++){
                             System.out.printf("%-20s\t" , miResultSet.getObject(i));
                         }
                         System.out.println();
