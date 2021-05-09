@@ -1,3 +1,18 @@
+/*
+EJERCICIO DE APLICACIÓN
+Crear el CRUD para almacenar registros en la siguiente tabla.
+
+ESTUDIANTE
+**************************************
+Campos Tipo de Datos Otros
+*************************************
+id_estudiante int - Llave primaria, autoincrementable desde 1001
+carnet_estudiante varchar(6) - Ejemplo MP1234
+nom_estudiante varchar(30)
+ape_estudiante varchar(30)
+edad_estudiante Int(3)
+
+*/
 package RecursosEstudiante;
 import java.sql.SQLException;
 import java.util.Scanner;
