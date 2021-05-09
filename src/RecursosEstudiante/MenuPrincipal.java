@@ -42,7 +42,7 @@ public class MenuPrincipal
         opcionMenu = opcionSeleccionada.next();
         switch (opcionMenu){
             case "1":
-                    Create create = new Create();s
+                    Create create = new Create();
                 break;
             case "2":
                     Read read = new Read();
