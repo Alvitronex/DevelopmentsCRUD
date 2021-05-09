@@ -26,7 +26,7 @@ public class Create {
         ConexionCRUD utilirias  = new ConexionCRUD();
         //SE ENVIAN LOS PARAMETROS NECESARIOS PARA GUARDAR EL REGISTRO AL METODO GUARDAR REGISTRO
         ConexionCRUD.guardarRegistros(tabla, camposTabla, valoresCampos);
-        MenuPrincipal.desplegarMenu();
+         MenuPrincipal.desplegarMenu();
         
     }
 }
